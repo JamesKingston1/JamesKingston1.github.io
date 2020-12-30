@@ -27,3 +27,11 @@ a:visited
 {
 color: white;
 }
+a:hover
+{
+background-color: lightgreen;
+}
+a:active
+{
+background-color: hotpink;
+}
