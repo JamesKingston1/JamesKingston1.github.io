@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Jimmy Kingston</title>
+<meta charset="UTF-8">
+<meta name="author" content="Jimmy Kingston">
+</head>
+
+<body>
+<p>
+<a href="../home.html">Return to Home</a>
+</p>
+<h1>Python Virtual Environment Tutorial</h1>
+
+<p>
+Different software projects often necessitate different versions of python and different versions of dependencies.<br>
+The mutually exclusive nature of these requirements can be problematic, so it is desirable to have the capability of selecting specific combinations of packages and versions to suit the unique demands of a project.<br>
+This is exactly what a virtual environment can do. There are multiple ways to do this:<br><br>
+</p>
+<img src="pyenvTutorial_img1.png" alt="Differentiating Environments"><br>
+<p>Image by Shinichi Okada</p>
+
+<p>
+Some tools allow one to specify exclusively between python versions. Others allow one to specify exclusively between virtual environments.<br>
+Others allow one to do both. The tool that my tutorial discusses allows one to specify both a python version and a virtual environment.<br>
+This tool is <a href="https://github.com/pyenv/pyenv>pyenv"></a>, with the <a href="https://github.com/pyenv/pyenv-virtualenv">pyenv-virtulenv</a> add-on.<br><br>
+
+Run the following installations with Homebrew:<br><br>
+$ brew install pyenv<br>
+$ brew install pyenv-virtualenv<br>
+
+Insert the following in the .bash_profile and .bashrc:<br><br>
+export PYENV_ROOT="$HOME/.pyenv"<br>
+export PATH="$PYENV_ROOT/bin:$PATH"<br>
+eval "$(pyenv init --path)",<br>
+eval "$(pyenv init -)"<br>
+eval "$(pyenv virtualenv-init -)"<br><br>
+
+export PYENV_VIRTUALENV_DISABLE_PROMPT=1<br><br><br>
+
+To install different versions of python with pyenv:<br><br>
+$ pyenv install [version] # e.g. pyenv install 3.9.10<br><br>
+
+To make a virtual environment, run:<br>
+$ pyenv virtualenv [version] [environmentName]<br>
+Example: $ pyenv virtual env 3.9.5 pyTest395<br><br>
+
+To associate a directory with a virtual environment:<br><br>
+$ pyenv local [environmentName]<br><br>
+
+To manually activate (or deactivate) a virtual environment:<br><br>
+$ pyenv activate [environmentName]<br>
+$ pyenv deactivate [environmentName]<br>
+
+To install a library for a virtual environment, be active in that virtual environment and run the following:<br><br>
+$ pip install [libraryName]<br><br>
+
+To get jupyter notebook going
+
+
+
+</p>
+
+
+
+</p>
+
+</body>
