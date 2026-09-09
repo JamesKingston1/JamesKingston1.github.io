@@ -1,7 +1,18 @@
 html
 {
-background: url("root_pictures/background_5.jpg") no-repeat center fixed;
+/* Dark fallback so white text stays readable on the part of the page that
+   scrolls past the (non-repeating) background image. */
+background-color: #1b2340;
+background-image: url("root_pictures/background_5.jpg");
+background-repeat: no-repeat;
+background-position: center;
+background-attachment: fixed;
 background-size: cover;
+}
+
+body
+{
+min-height: 100vh;
 }
 
 h1
@@ -35,4 +46,83 @@ color: black;
 a:active
 {
 background-color: hotpink;
+}
+
+/* ---- Publication list ---- */
+ol.publications
+{
+color: white;
+padding-left: 1.5em;
+}
+ol.publications li
+{
+margin-bottom: 0.75em;
+padding: 2px 4px;
+transition: background-color 0.12s ease-in-out;
+}
+
+/* Hovering anywhere on a publication highlights the whole entry at 50% opacity...
+   (lightgreen = #90EE90, matching the site-wide a:hover colour) */
+ol.publications li:hover
+{
+background-color: rgba(144, 238, 144, 0.5);
+color: black;
+}
+
+/* ...while the quoted title — the link plus the curly quotes bracketing it —
+   gets the full-strength colour. The quotes live in <span class="q"> so they
+   highlight along with the title without becoming part of the clickable link. */
+ol.publications li:hover a,
+ol.publications li:hover .q
+{
+background-color: rgb(144, 238, 144);
+color: black;
+}
+
+/* ---- MathJax: keep rendered math the same colour as the surrounding text ---- */
+mjx-container
+{
+color: inherit;
+}
+
+/* ---- Footer ---- */
+footer.site-footer
+{
+position: relative;
+margin-top: 3em;
+padding: 1em 1.5em 1.25em 1.5em;
+color: white;
+font-size: 0.85em;
+background-color: rgba(0, 0, 0, 0.35);
+border-top: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+footer.site-footer .footer-center
+{
+text-align: center;
+line-height: 1.5;
+}
+
+footer.site-footer .footer-right
+{
+position: absolute;
+right: 1.5em;
+bottom: 1.25em;
+text-align: right;
+font-size: 0.9em;
+opacity: 0.85;
+max-width: 22em;
+}
+
+/* On narrow screens, stack the credit under the centred text instead of
+   overlapping it. */
+@media (max-width: 700px)
+{
+footer.site-footer .footer-right
+{
+position: static;
+text-align: center;
+margin: 0.75em auto 0 auto;
+max-width: none;
+}
 }

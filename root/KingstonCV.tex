@@ -1,0 +1,333 @@
+%==============================================================================
+%  James W. Kingston -- Curriculum Vitae
+%  Reconstruction of KingstonCV.pdf in LaTeX.
+%  Compiles with pdfLaTeX on Overleaf out of the box (no external files needed).
+%==============================================================================
+\documentclass[11pt,letterpaper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathptmx}                 % Times-like serif, matches the Word original
+\usepackage[margin=1in]{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+\usepackage{needspace}
+
+%------------------------------------------------------------------------------
+% Section headings: large, grey, non-bold -- mimics the Word "Heading 1" style
+%------------------------------------------------------------------------------
+\definecolor{headinggray}{HTML}{595959}
+
+\titleformat{\section}
+  {\normalfont\Large\color{headinggray}}{}{0pt}{}
+\titlespacing*{\section}{0pt}{1.2\baselineskip}{0.25\baselineskip}
+
+%------------------------------------------------------------------------------
+% List styles
+%------------------------------------------------------------------------------
+% First-level bullets use a dash, like the original.
+\setlist[itemize,1]{label=--, leftmargin=2.2em, topsep=1pt, itemsep=1pt,
+                    parsep=0pt, labelsep=0.6em}
+\setlist[itemize,2]{label=\textrm{o}, leftmargin=2.0em, topsep=1pt, itemsep=1pt,
+                    parsep=0pt, labelsep=0.6em}
+\setlist[enumerate,1]{leftmargin=2.2em, topsep=2pt, itemsep=2pt, parsep=0pt}
+
+%------------------------------------------------------------------------------
+% Helper macros
+%------------------------------------------------------------------------------
+% \entry{Title}{Dates} -- bold title flush left, dates flush right
+\newcommand{\entry}[2]{%
+  \needspace{3\baselineskip}%
+  \noindent\textbf{#1}\hfill #2\par}
+
+% \affil{Institution, City ST ZIP} -- italic affiliation line under an entry
+\newcommand{\affil}[1]{\noindent\textit{#1}\par\vspace{1pt}}
+
+% \pubitem -- publication entries get a little breathing room
+\newenvironment{publist}
+  {\begin{enumerate}[leftmargin=2.2em, topsep=2pt, itemsep=6pt, parsep=0pt]}
+  {\end{enumerate}}
+
+\setlength{\parindent}{0pt}
+\pagestyle{empty}
+
+%==============================================================================
+\begin{document}
+
+%------------------------------------------------------------------------------
+% Header
+%------------------------------------------------------------------------------
+\begin{center}
+  {\Large James W. Kingston}\\[2pt]
+  \href{mailto:james.kingston@yale.edu}{james.kingston@yale.edu}
+\end{center}
+\vspace{0.5\baselineskip}
+
+%------------------------------------------------------------------------------
+\section*{EDUCATION}
+
+\entry{University of California, Davis}{2026}
+\begin{itemize}
+  \item Physics, PhD (GPA: 4.0)
+\end{itemize}
+
+\entry{University of Chicago}{2019}
+\begin{itemize}
+  \item Physics, Masters
+\end{itemize}
+
+\entry{University of California, Berkeley}{2017}
+\begin{itemize}
+  \item Physics and Applied Mathematics, Bachelors
+\end{itemize}
+
+%------------------------------------------------------------------------------
+\section*{SKILLS}
+
+\textbf{Operating Systems}: UNIX/Linux, Windows\\
+\textbf{Programming Languages}: Python, C++, Bash\\
+\textbf{Software}: NumPy, Matplotlib, SciPy, COMSOL, SolidWorks, ROOT, KiCad\\
+\textbf{Hardware}: High Vacuum Systems, Noble Element Cryogenics, High Voltage (HV),
+Electronics, Soldering, Machine Shop Proficiency, Orbital Welding
+
+%------------------------------------------------------------------------------
+\section*{PROFESSIONAL EXPERIENCE}
+
+\entry{Graduate Student Researcher, Rare Event Detection Group}{May 2021 -- May 2026}
+\affil{Lawrence Livermore National Laboratory, Livermore CA 94550}
+\begin{itemize}
+  \item Studied properties of electroluminescence light in the CHILLAX detector, the
+        world's first dual phase xenon-doped argon time projection chamber (TPC),
+        culminating in a first-author paper.
+  \item Analyzed scintillation waveforms captured by Silicon Photomultipliers (SiPMs)
+        from CHILLAX, including:
+        \begin{itemize}
+          \item Scrutinizing individual event waveforms to tune pulse-finding and
+                baseline-finding algorithms.
+          \item Analyzing reduced quantities (RQs) to perform data quality cuts.
+          \item Performing statistical analyses on RQs to draw conclusions about data.
+        \end{itemize}
+  \item Designed and built a TPC for CHILLAX, which hosts a 35~g active target, 6 SiPMs,
+        and over 6~kV/cm drift field.
+  \item Set up analog electronic scheme for amplifying, filtering, and triggering SiPM
+        signals allowing for single photoelectron (SPE) sensitivity in each channel.
+  \item Developed and built cryogenics for CHILLAX which proved capable of stable
+        operation at 5\% xenon concentration, resulting in a publication.
+  \item Built a gas panel for purifying, circulating, precision doping, and mixing of
+        noble gases.
+  \item Designed and constructed an electronics rack for mounting and wiring all
+        electronics for CHILLAX, which includes kempt routing of hundreds of wires for
+        over 50 instruments.
+  \item Designed and instrumented a cryogenic capacitor sensitive to 1~fF shifts
+        corresponding to 0.01\% changes to the xenon concentration in liquid argon.
+  \item Conceived and built a bubble routing device to direct undesired bubbles away
+        from the detector liquid volume, stabilizing the liquid surface.
+  \item Characterized SiPM dark rate, crosstalk, afterpulsing, and photon detection
+        efficiency (PDE) in a liquid argon environment with direct argon scintillation
+        light, resulting in a publication.
+\end{itemize}
+
+\vspace{0.4\baselineskip}
+\entry{Assistant Specialist, Pantic Group}{September 2019 -- August 2020}
+\affil{Department of Physics, UC Davis, Davis CA 95616}
+\begin{itemize}
+  \item Worked in a team to develop a mockup of the DarkSide-20k argon detector for HV
+        studies.
+  \item Performed a COMSOL electric field simulation to find the optimal HV cable
+        properties for minimizing an electric field hotspot.
+  \item Designed and built a 10$'$ crane frame to lift the mockup cryostat flange for
+        maintenance.
+  \item Designed a cryogenic camera for viewing HV sparking inside the cryostat.
+\end{itemize}
+
+\vspace{0.4\baselineskip}
+\entry{Graduate Researcher, Grandi Group}{September 2018 -- June 2019}
+\affil{Kavli Institute for Cosmological Physics, University of Chicago, Chicago IL 60615}
+\begin{itemize}
+  \item Operated and collected data with a dual-phase xenon TPC.
+  \item Expanded on existing Geant4 simulations to measure geometric efficiency of
+        photomultiplier tubes (PMTs).
+  \item Designed and implemented a level meter inside the xenon detector for precision
+        measurements of the gas-liquid interface.
+  \item Analyzed data using techniques such as pulse-shape discrimination and event
+        position-reconstruction.
+  \item Calibrated the detector with krypton-83 gammas and measured the half-life of
+        decays with 3\% precision.
+\end{itemize}
+
+\vspace{0.4\baselineskip}
+\entry{Research Assistant, Rare Event Detection Group}{June 2016 -- August 2018}
+\affil{Lawrence Livermore National Laboratory, Livermore CA 94550}
+\begin{itemize}
+  \item Worked in a team to design and build XeNu, a dual-phase xenon TPC.
+  \item Made 3D potential and electric field simulations of the detector volume.
+  \item Calibrated detector response to single photoelectrons and single electrons.
+  \item Assisted in operating XeNu TPC HV at liquid drift fields up to 10.4~kV/cm for
+        electron extraction efficiency measurements, the highest achieved to date in a
+        dual-phase xenon detector.
+  \item Commissioned detector at Triangle Universities Nuclear Laboratory to study low
+        energy nuclear recoils from a neutron beam, where the ionization yield of
+        0.3~keV nuclear recoils was measured for the first time.
+\end{itemize}
+
+\vspace{0.4\baselineskip}
+\entry{Undergraduate Researcher, CMS Group}{July 2017 -- September 2017}
+\affil{Deutsches Elektronen-Synchrotron (DESY), Hamburg Germany 22607}
+\begin{itemize}
+  \item Added commands to a program that sent instructions to and read data from a new
+        pixel readout chip.
+  \item Wrote code to send a calibration pulse to the readout chip and draw the
+        resulting signal pulse shape.
+  \item Characterized the chip by determining the dependence of features of the pulse
+        shape (e.g.\ amplitude, peaking time) on various parameters of the chip that
+        could be modified by the user.
+  \item Optimized the chip for usage in the DESY electron test beam.
+\end{itemize}
+
+%------------------------------------------------------------------------------
+\section*{CERTIFICATIONS}
+
+\entry{Machine Shop Class}{April 2023 -- September 2023}
+\affil{UC Davis Mathematical and Physical Science Division Machine Shop, Davis CA 95616}
+\begin{itemize}
+  \item Learned basic machine tool and shop safety, fundamentals of precision measuring,
+        introduction to materials.
+  \item Operated lathes, milling machines, and other powered shop equipment.
+  \item Read and made computer-aided design (CAD) drawings.
+  \item Applied skills to build a functional tape dispenser composed of self-machined
+        parts made of aluminum, acrylic, and stainless steel.
+\end{itemize}
+
+%------------------------------------------------------------------------------
+\section*{PUBLICATIONS}
+
+\begin{publist}
+  \item \textbf{J. Kingston}, J. Qi, J. Xu, E. Bernard, A. Tidball, A. Peck, N. Bowden,
+        M. Tripathi, K. Ni, S. Westerdale, ``Gas electroluminescence in a dual phase
+        xenon-doped argon detector'', Phys.\ Rev.\ D \textbf{113}, 032016
+        (February 2026)
+
+  \item J. Xu, D. Adams, B. Lenardo, T. Pershing, R. Mannino, E. Bernard,
+        \textbf{J. Kingston}, E. Mizrachi, J. Lin, R. Essig, V. Mozin, P. Kerr,
+        A. Bernstein, M. Tripathi, ``Search for the Migdal effect in liquid xenon with
+        keV-level nuclear recoils'', Phys.\ Rev.\ D \textbf{109}, L051101 (March 2024)
+
+  \item E. Bernard, E. Mizrachi, \textbf{J. Kingston}, J. Xu, S. Pereverzev,
+        T. Pershing, R. Smith, C. Prior, N. S. Bowden, A. Bernstein, C. Hall, E. Pantic,
+        M. Tripathi, D. McKinsey, P. Barbeau, ``Thermodynamic stability of xenon-doped
+        liquid argon detectors'', Phys.\ Rev.\ C \textbf{108}, 045503 (October 2023)
+
+  \item T. Pershing, D. Naim, B. Lenardo, J. Xu, \textbf{J. Kingston}, E. Mizrachi,
+        V. Mozin, P. Kerr, S. Pereverzev, A. Bernstein, M. Tripathi, ``Calibrating the
+        scintillation and ionization responses of xenon recoils for high-energy dark
+        matter searches'', Phys.\ Rev.\ D \textbf{106}, 052013 (September 2022)
+
+  \item T. Pershing, J. Xu, E. Bernard, \textbf{J. Kingston}, E. Mizrachi, J. Brodsky,
+        A. Razeto, P. Kachru, A. Bernstein, E. Pantic, I. Jovanovic, ``Performance of
+        Hamamatsu VUV4 SiPMs for detecting liquid argon scintillation'', Journal of
+        Instrumentation \textbf{17}, P04017 (May 2022)
+
+  \item B. Lenardo, J. Xu, S. Pereverzev, O. Akindele, D. Naim, \textbf{J. Kingston},
+        A. Bernstein, K. Kazkaz, M. Tripathi, C. Awe, L. Li, J. Runge, S. Hedges, P. An,
+        P. Barbeau, ``Low-energy physics reach of xenon detectors for
+        nuclear-recoil-based dark matter and neutrino experiments'',
+        Phys.\ Rev.\ Lett.\ \textbf{123}, 231106 (December 2019)
+
+  \item J. Xu, S. Pereverzev, B. Lenardo, \textbf{J. Kingston}, D. Naim, A. Bernstein,
+        K. Kazkaz, M. Tripathi, ``Electron extraction efficiency study for dual-phase
+        xenon dark matter experiments'', Phys.\ Rev.\ D \textbf{99}, 103024 (May 2019)
+\end{publist}
+
+%------------------------------------------------------------------------------
+\section*{ORAL PRESENTATIONS}
+
+\begin{publist}
+  \item ``Gas Electroluminescence in a Dual Phase Xenon-Doped Argon TPC'', Light
+        Detection in Noble Elements (Hong Kong, October 2025)
+
+  \item ``Recent Results of a Xenon-Doped Argon Ionization Detector with the CHILLAX
+        Experiment'', American Physical Society (APS) Global Physics Summit
+        (Anaheim, March 2025)
+
+  \item ``Xenon-Doping of Liquid Argon with the CHILLAX Detector'', Nuclear Science and
+        Security Fall Workshop (Livermore, November 2024)
+
+  \item ``Reactor CEvNS: LXe and LAr Detectors'', Workshop on Neutrino Science and
+        Applications at the High Flux Isotope Reactor (Oak Ridge, April 2024)
+
+  \item ``Studies of Xenon-Doped Argon with the CHILLAX Experiment'', Coordinating Panel
+        on Advanced Detectors (Menlo Park, November 2023)
+
+  \item ``Capacitive Monitoring of Xenon Concentration in a Xenon-Doped Argon
+        Detector'', Coordinating Panel on Advanced Detectors (Stony Brook,
+        November 2022)
+
+  \item ``Characterization of Hamamatsu VUV4 Silicon Photomultipliers using Argon
+        Scintillation Light'', APS Grad Slam Lightning Talk \textbf{(Winner, Awarded
+        1 Year of APS Free Membership)} (New York City, April 2022)
+
+  \item ``Characterization of Hamamatsu VUV4 Silicon Photomultipliers using Argon
+        Scintillation Light'', APS April Meeting (New York City, April 2022)
+\end{publist}
+
+%------------------------------------------------------------------------------
+\section*{FELLOWSHIPS AND AWARDS}
+
+\begin{enumerate}
+  \item Professor Emerita Ling-Lie Chau Prize for Excellence in Graduate Studies
+        (June 2025)
+  \item Nuclear Science and Security Consortium (NSSC) Best National Laboratory
+        Collaboration Award (June 2024)
+  \item UC Davis Graduate Program Fellowship (Spring 2024)
+  \item High Energy Physics Consortium for Advanced Training (HEPCAT) Fellowship
+        (2023--2024)
+  \item NSSC Graduate Fellow (2021--2026)
+  \item NSSC Undergraduate Fellow (2016--2017)
+\end{enumerate}
+
+%------------------------------------------------------------------------------
+\section*{OUTREACH}
+
+\begin{enumerate}
+  \item Lab Instructor, HEPCAT Summer School \hfill Summer 2022, 2023, 2024
+        \begin{itemize}
+          \item Deployed a minimal liquid argon scintillation detector for demonstration
+                at the HEPCAT Summer School.
+          \item Instructed students on basics of safely operating vacuum, high pressure,
+                and cryogenic hardware.
+          \item Guided multiple small groups of students to submerge the detector's
+                SiPMs in approximately half a liter of liquid argon.
+          \item Utilized a radioactive source to increase the detector event rate and
+                demonstrate the SiPMs' sensitivity to liquid argon scintillation light.
+        \end{itemize}
+\end{enumerate}
+
+%------------------------------------------------------------------------------
+\section*{TEACHING EXPERIENCE}
+
+\begin{enumerate}
+  \item Physics 80, UC Davis \hfill Spring 2021
+        \begin{itemize}
+          \item Taught a lab section for a Python data analysis course for physics
+                majors.
+          \item Wrote solutions for and graded assignments.
+        \end{itemize}
+
+  \item Physics 9B, UC Davis \hfill Winter 2021
+        \begin{itemize}
+          \item Held weekly office hours for an introductory electromagnetism course for
+                physics majors.
+          \item Wrote solutions for and graded assignments.
+        \end{itemize}
+
+  \item Physics 7A, UC Davis \hfill Fall 2020
+        \begin{itemize}
+          \item Taught a lab and discussion section for an introductory conservation
+                principles course for non-physics majors.
+          \item Graded lab assignments.
+        \end{itemize}
+\end{enumerate}
+
+\end{document}
